@@ -24,10 +24,7 @@ for param in bert_model.parameters():
 # num_layers = 2  # 使用两层RNN
 # dropout = 0.2
 
-# advanced_rnn_model = RNN(input_size, hidden_size, output_size, num_layers, dropout)
-
 # # Instantiate the combined model
-# combined_model = BERT_RNN(bert_model, advanced_rnn_model)
 model = SentimentClassifier(bert_model, rnn_hidden_size=256, num_classes=5)  # 假设有5个星级
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = torch.device('mps')
